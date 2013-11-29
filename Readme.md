@@ -12,3 +12,9 @@ We are here to help you out. With Marker, you can type in simple plain text mail
 * [Official Markdown Documentation](http://daringfireball.net/projects/markdown/)
 * [Markdown CheatSheet](http://assemble.io/docs/Cheatsheet-Markdown.html)
 * Not to be Worried. An Offline Manual is available in the Marker Extension and contains all fundamental Mardown Syntax. This manual can be accessed by right clicking on the **Marker button** in the chrome panel and selecting **options**.
+
+#### Information and Contact
+Marker is based on the foundation of several amazing technologies with the major ones being
+*[Markdown](http://daringfireball.net/projects/markdown/)
+*[highlightjs](http://highlightjs.org/)
+For bugs, features, queries, contact **sonal@enfoss.org**
