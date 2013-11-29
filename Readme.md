@@ -19,4 +19,5 @@ Marker is based on the foundation of several amazing technologies with the major
 * [highlightjs](http://highlightjs.org/)
 
 View the official marker page : [http://sonal-raj.github.io/marker](http://sonal-raj.github.io/marker)
+
 For bugs, features, queries, contact **sonal@enfoss.org**
