@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<!--
+Copyright Sonal Raj 2013
+MIT License : http://sonalraj.mit-license.org/
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8"  />
+		<meta name="viewport" content="width=device-width"/>
+        <title>Marker Options</title>
+        <link rel="stylesheet" href="optiondata/style.css"/>
+        <link rel="icon" type="image/png" href="images/icon16.png"/>  
+		<style type="text/css">
+			* { margin, padding: 0; }
+
+			body {
+				background: #474747 url(optiondata/images/bg.png);
+				margin: 70px;
+			}
+
+			h1 a {
+				display: block; text-decoration: none;
+				font: 50px Helvetica, Arial, Sans-Serif; letter-spacing: -5px;  
+				text-align: center;
+				color: #999; text-shadow: 0px 3px 8px #2a2a2a;
+			 }
+				h1 a:hover {
+					color: #a0a0a0; text-shadow: 0px 5px 8px #2a2a2a;
+				}
+			 
+
+			pre {
+				width: 97%;                          /* specify width  */
+				overflow: auto;
+				font-family: Consolas,monospace;
+				background:#cecece;
+				padding:12px;
+				margin-right:12px;
+				font-weight:bold;
+				white-space: pre-wrap;                 /* CSS3 browsers  */
+				white-space: -moz-pre-wrap !important; /* 1999+ Mozilla  */
+				white-space: -pre-wrap;                /* Opera 4 thru 6 */
+				white-space: -o-pre-wrap;              /* Opera 7 and up */
+				word-wrap: break-word;                 /* IE 5.5+ and up */
+				/* overflow-x: auto; */                /* Firefox 2 only */
+				/* width: 99%; */		       /* only if needed */
+				-webkit-box-shadow: 0px 2px 3px #555;
+				-moz-box-shadow: 0px 2px 3px #555;
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				}
+				
+			pree {
+				margin: 0 0 0 0; background: #363636; padding: 2px;
+				font-size: 15px; color: #efefef; text-shadow: 0px 2px 3px #171717;
+				
+				-webkit-box-shadow: 0px 2px 3px #555;
+				-moz-box-shadow: 0px 2px 3px #555;
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+			}
+
+			
+			#left
+			{
+			  font-family: serif;
+			  font-weight: bold;
+			  width: 100%;
+			  float: left;
+			  background: #faff71;
+			  padding: 10px 20px 10px 15px;
+			  box-shadow: -4px 0 2px -2px rgba(0,0,0,0.4);
+			}
+
+			#left2
+			{
+			  width: 100%;
+			  float: left;
+			  background: #ffffff;
+			  padding: 10px 20px 10px 15px;
+			  box-shadow: -4px 0 2px -2px rgba(0,0,0,0.4);
+			}
+
+			.clear
+			{
+			  clear: both;
+			}
+			hr.carved {
+			  clear: both; 
+			  float: none; 
+			  width: 100%; 
+			  height: 2px;
+			  margin: 1.4em 0;
+			  border: none; 
+			  background: #ddd;
+			  background-image: -webkit-gradient(
+				  linear,
+				  left top,
+				  left bottom,
+				  color-stop(0.5, rgb(221,221,221)),
+				  color-stop(0.5, rgb(255,255,255))
+			  );
+			  background-image: -moz-linear-gradient(
+				  center top,
+				  rgb(221,221,221) 50%,
+				  rgb(255,255,255) 50%
+			  );
+			}
+			
+			h3 {
+				color:#353535;
+				font-size: 18px;
+				line-height: 40px;
+			}
+			  footer {
+				margin: 1em auto;
+				max-width: 700px;
+				text-align: center;
+			  }
+			  
+			    .hidden {
+				visibility: hidden;
+			  }
+			    #tests-link {
+				font-size: 0.5em;
+				text-align: right;
+			  }
+			  #thinhead {
+					background:#1b1b1b;
+					color:#f9f9f9;
+					-webkit-box-shadow: 0px 2px 3px #555;
+					-moz-box-shadow: 0px 2px 3px #555;
+					-webkit-border-radius: 10px;
+					-moz-border-radius: 10px;
+					padding-left:20px;
+			  }
+			  code {
+				background:#ebebeb;
+				font-family: Consolas,monospace;
+				font-weight: bold;
+			  }
+			  
+			  table a:link {
+					color: #666;
+					font-weight: bold;
+					text-decoration:none;
+				}
+				table a:visited {
+					color: #999999;
+					font-weight:bold;
+					text-decoration:none;
+				}
+				table a:active,
+				table a:hover {
+					color: #bd5a35;
+					text-decoration:underline;
+				}
+				table {
+					font-family:Arial, Helvetica, sans-serif;
+					color:#666;
+					font-size:12px;
+					text-shadow: 1px 1px 0px #fff;
+					background:#eaebec;
+					margin:20px;
+					border:#ccc 1px solid;
+
+					-moz-border-radius:3px;
+					-webkit-border-radius:3px;
+					border-radius:3px;
+
+					-moz-box-shadow: 0 1px 2px #d1d1d1;
+					-webkit-box-shadow: 0 1px 2px #d1d1d1;
+					box-shadow: 0 1px 2px #d1d1d1;
+				}
+				table th {
+					padding:21px 25px 22px 25px;
+					border-top:1px solid #fafafa;
+					border-bottom:1px solid #e0e0e0;
+
+					background: #ededed;
+					background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+					background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+				}
+				table th:first-child {
+					text-align: left;
+					padding-left:20px;
+				}
+				table tr:first-child th:first-child {
+					-moz-border-radius-topleft:3px;
+					-webkit-border-top-left-radius:3px;
+					border-top-left-radius:3px;
+				}
+				table tr:first-child th:last-child {
+					-moz-border-radius-topright:3px;
+					-webkit-border-top-right-radius:3px;
+					border-top-right-radius:3px;
+				}
+				table tr {
+					text-align: center;
+					padding-left:20px;
+				}
+				table td:first-child {
+					text-align: left;
+					padding-left:20px;
+					border-left: 0;
+				}
+				table td {
+					padding:18px;
+					border-top: 1px solid #ffffff;
+					border-bottom:1px solid #e0e0e0;
+					border-left: 1px solid #e0e0e0;
+
+					background: #fafafa;
+					background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+					background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+				}
+				table tr.even td {
+					background: #f6f6f6;
+					background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+					background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
+				}
+				table tr:last-child td {
+					border-bottom:0;
+				}
+				table tr:last-child td:first-child {
+					-moz-border-radius-bottomleft:3px;
+					-webkit-border-bottom-left-radius:3px;
+					border-bottom-left-radius:3px;
+				}
+				table tr:last-child td:last-child {
+					-moz-border-radius-bottomright:3px;
+					-webkit-border-bottom-right-radius:3px;
+					border-bottom-right-radius:3px;
+				}
+				table tr:hover td {
+					background: #f2f2f2;
+					background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+					background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
+				}
+				blockquote {
+				  background: #f9f9f9;
+				  border-left: 10px solid #ccc;
+				  margin: 1.5em 10px;
+				  padding: 0.5em 10px;
+				  quotes: "\201C""\201D""\2018""\2019";
+				}
+				blockquote:before {
+				  color: #ccc;
+				  content: open-quote;
+				  font-size: 4em;
+				  line-height: 0.1em;
+				  margin-right: 0.25em;
+				  vertical-align: -0.4em;
+				}
+				blockquote p {
+				  display inline;
+				}
+		</style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <div id="logo"><img src="images/icon48.png"/><span style="font-weight:900;font-size:30px">Marker</span></div>
+            </div>
+            <div id="intro">
+                <h1>Write Beautifully formatted emails with Marker.</h1>
+                <h2 style="text-align: center; color: #222; text-shadow: 0px 2px 3px #555;">We love and notice impressive emails. With marker, its time to make your mark.</h2>
+            </div>
+			<div id="left">
+					<h2 style="text-align:left;font-size:20px;color: #222; text-shadow: 0px 2px 3px #555;">How to use it?</h2>
+					<div>
+						<ul style="list-style-type: disc;text-align:left;font-size:30px;">
+						  <li id="need-page-reload">
+							Reload your email web page or restart your web browser. (To fully integrate the extension.)
+						  </li>
+						  <li>
+							Compose a new mail.
+						  </li>
+						  <li>
+							Type something in Markdown into the email.<br/><i>Try keying in: </i><code>*Markdown* `for` ###Mortals!</code>
+						  </li>
+						  <li>
+							Right-click in the email and then click "Toggle Marker". (Or click the <img src="images/icon16.png"/> button on the toolbar.<span class="hotkey-display-wrapper"> Or press <span class="hotkey-display"><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>M</kbd></span></span>)
+						  </li>
+						  <li>
+							Impress with a beautifully formatted email!!
+						  </li>
+						</ul>
+						<p>To access this manual, right click on the <img src="images/icon16.png"/> button on the toolbar and select options</p>
+					</div>
+				</div>
+
+				<div id="left2" style="margin-top:20px;">
+					<h2 style="text-align:left;font-size:18px;color: #222; text-shadow: 0px 2px 3px #555;">Marker Manual</h2>
+<div id="thinhead">
+<h3 style="color:#f9f9f9;">Headers </h3>
+</div>
+<hr class="carved"/>
+<pre>
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+
+Alternatively, for H1 and H2, an underline-ish style:
+
+Alt-H1
+======
+
+Alt-H2
+------
+</pre>
+<h1>H1</h1>
+<h2>H2</h2>
+<h3>H3</h3>
+<h4>H4</h4>
+<h5>H5</h5>
+<h6>H6</h6>
+<p>Alternatively, for H1 and H2, an underline-ish style:</p>
+<h1>Alt-H1</h1>
+<h2>Alt-H2</h2>	
+
+<hr class="carved"/>
+<div id="thinhead">
+<h3 style="color:#f9f9f9;">Emphasis </h3>
+</div>
+<hr class="carved"/>
+
+<pre>
+Emphasis, aka italics, with *asterisks* or _underscores_.
+
+Strong emphasis, aka bold, with **asterisks** or __underscores__.
+
+Combined emphasis with **asterisks and _underscores_**.
+
+Strikethrough uses two tildes. ~~Scratch this.~~
+</pre>
+<p>Emphasis, aka italics, with <em>asterisks</em> or <em>underscores</em>.</p>
+
+<p>Strong emphasis, aka bold, with <strong>asterisks</strong> or <strong>underscores</strong>.</p>
+
+<p>Combined emphasis with <strong>asterisks and <em>underscores</em></strong>.</p>
+
+<p>Strikethrough uses two tildes. ~~Scratch this.~~</p>
+
+<hr class="carved"/>
+<div id="thinhead">
+<h3 style="color:#f9f9f9;">Lists </h3>
+</div>
+<hr class="carved"/>
+
+<pre>
+1. First ordered list item
+2. Another item
+    * Unordered sub-list. 
+1. Actual numbers don't matter, just that it's a number
+    1. Ordered sub-list
+4. And another item.
+
+   You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
+
+   To have a line break without a paragraph, you will need to use two trailing spaces.  
+   Note that this line is separate, but within the same paragraph.  
+   (This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
+
+* Unordered list can use asterisks
+- Or minuses
++ Or pluses
+</pre>
+<ol>
+<li>First ordered list item</li>
+<li>Another item
+<ul style="list-style-type:disc;"><li>Unordered sub-list. </li></ul></li>
+<li>Actual numbers don't matter, just that it's a number
+<ol><li>Ordered sub-list</li></ol></li>
+<li><p>And another item.</p>
+
+<p>You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).</p>
+
+<p>To have a line break without a paragraph, you will need to use two trailing spaces. <br />
+Note that this line is separate, but within the same paragraph. <br />
+(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)</p></li>
+</ol>
+<ul style="list-style-type:disc;">
+<li>Unordered list can use asterisks</li>
+<li>Or minuses</li>
+<li>Or pluses</li>
+</ul>
+
+<hr class="carved"/>
+<div id="thinhead">
+<h3 style="color:#f9f9f9;">Links	 </h3>
+</div>
+<hr class="carved"/>
+
+<pre>
+[I'm an inline-style link](https://www.google.com)
+
+[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+
+[I'm a reference-style link][Arbitrary case-insensitive reference text]
+
+[I'm a relative reference to a repository file](../blob/master/LICENSE)
+
+[You can use numbers for reference-style link definitions][1]
+
+Or leave it empty and use the [link text itself]
+
+Some text to show that the reference links can follow later.
+</pre>
+<p><a href="https://www.google.com">I'm an inline-style link</a></p>
+
+<p><a href="https://www.google.com" title="Google's Homepage">I'm an inline-style link with title</a></p>
+
+<p><A href="#">I'm a reference-style link</a></p>
+
+<p><a href="../blob/master/LICENSE">I'm a relative reference to a repository file</a></p>
+
+<p><a href="">You can use numbers for reference-style link definitions</a></p>
+
+<p>Or leave it empty and use the <a href="">link text itself</a></p>
+
+<p>Some text to show that the reference links can follow later.</p>
+
+
+<hr class="carved"/>
+<div id="thinhead">
+<h3 style="color:#f9f9f9;">Images	 </h3>
+</div>
+<hr class="carved"/>
+
+<pre>
+Here's a logo (hover to see the title text):
+
+Inline-style: 
+![alt text](http://www.w3schools.com/images/w3logotest2.png "Logo Title Text 1")
+
+Reference-style: 
+![alt text][logo]
+</pre>
+<p>Here's a logo (hover to see the title text):</p>
+
+<p>Inline-style: 
+<img src="http://www.w3schools.com/images/w3logotest2.png" alt="alt text" title="Logo Title Text 1" /></p>
+<p>Reference-style</p>
+<img src="http://www.w3schools.com/images/w3logotest2.png" alt="alt text" />
+
+<hr class="carved"/>
+<div id="thinhead">
+<h3 style="color:#f9f9f9;">Code and Syntax Highlighting </h3>
+</div>
+<hr class="carved"/>
+
+<p>Code blocks are part of the Markdown spec, but syntax highlighting isn't. However, many renderers -- like Github's -- support syntax highlighting.</p>
+<pre>
+Inline `code` has `back-ticks around` it.
+</pre>
+<p>Inline <code>code</code> has <code>back-ticks around</code> it.</p>
+
+<p>Blocks of code are either fenced by lines with three back-ticks ```, or are indented with four spaces. I recommend only using the fenced code blocks -- they're easier and only they support syntax highlighting.</p>
+<pre>
+```javascript
+ var s = "JavaScript syntax highlighting";
+ alert(s);
+ </pre>
+ <pre>
+ s = "Python syntax highlighting"
+ print s
+ </pre>
+ <pre>
+ No language indicated, so no syntax highlighting. 
+ But let's throw in a <b>tag</b>.
+ </pre>
+ <p>(Github Wiki pages don't seem to support syntax highlighting, so the above won't be colourful (the strings are not red, for example). Try it out in a Markdown Here email or a Github Markdown README or Github Issue -- you can preview a new Issue without submitting it.)
+</p><p>Again, to see what languages are available for highlighting, and how to write those language names, see the highlight.js demo page.</p>
+
+<hr class="carved"/>
+<div id="thinhead">
+<h3 style="color:#f9f9f9;">Tables </h3>
+</div>
+<hr class="carved"/>
+				
+<pre>
+Colons can be used to align columns.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+</pre>
+<p>Colons can be used to align columns.</p>
+<table>
+<thead>
+<tr>
+<th>Tables</th>
+<th align="center">Are</th>
+<th align="right">Cool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>col 3 is</td>
+<td align="center">right-aligned</td>
+<td align="right">$1600</td>
+</tr>
+<tr>
+<td>col 2 is</td>
+<td align="center">centered</td>
+<td align="right">$12</td>
+</tr>
+<tr>
+<td>zebra stripes</td>
+<td align="center">are neat</td>
+<td align="right">$1</td>
+</tr>
+</tbody>
+</table>
+<p>The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.</p>
+<table>
+<thead>
+<tr>
+<th>Markdown</th>
+<th>Less</th>
+<th>Pretty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Still</em></td>
+<td><code>renders</code></td>
+<td><strong>nicely</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+			
+<hr class="carved"/>
+<div id="thinhead">
+<h3 style="color:#f9f9f9;">Blockquotes </h3>
+</div>
+<hr class="carved"/>
+
+<pre>
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
+
+Quote break.
+
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
+</pre>
+<blockquote>
+<p>Blockquotes are very handy in email to emulate reply text.
+This line is part of the same quote.</p>
+</blockquote>
+<p>Quote break.</p>
+<blockquote>
+<p>This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can <em>put</em> <strong>Markdown</strong> into a blockquote. </p>
+</blockquote>
+
+<hr class="carved"/>
+<div id="thinhead">
+<h3 style="color:#f9f9f9;">Inline HTML </h3>
+</div>
+<hr class="carved"/>
+
+<p>You can also use raw HTML in your Markdown, and it'll mostly work pretty well.</p>	
+</p>&#x000A;&#x000A;       <div class="white"><div class="highlight"><pre><span class="nt">&lt;dl&gt;</span>&#x000A;  <span class="nt">&lt;dt&gt;</span>Definition list<span class="nt">&lt;/dt&gt;</span>&#x000A;  <span class="nt">&lt;dd&gt;</span>Is something people use sometimes.<span class="nt">&lt;/dd&gt;</span>&#x000A;&#x000A;  <span class="nt">&lt;dt&gt;</span>Markdown in HTML<span class="nt">&lt;/dt&gt;</span>&#x000A;  <span class="nt">&lt;dd&gt;</span>Does *not* work **very** well. Use HTML <span class="nt">&lt;em&gt;</span>tags<span class="nt">&lt;/em&gt;</span>.<span class="nt">&lt;/dd&gt;</span>&#x000A;<span class="nt">&lt;/dl&gt;</span>&#x000A;</pre></div></div>&#x000A;&#x000A;&#x000A;	
+<dl>
+<dt>Definition list</dt>
+<dd>Is something people use sometimes.</dd>
+<dt>Markdown in HTML</dt>
+<dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+</dl>
+
+<hr class="carved"/>
+<div id="thinhead">
+<h3 style="color:#f9f9f9;">Horizontal Rule </h3>
+</div>
+<hr class="carved"/>
+
+<pre>
+Three or more...
+
+---
+
+Hyphens
+
+***
+
+Asterisks
+
+___
+
+Underscores
+</pre>
+<p>Three or more...</p>
+<hr />
+<p>Hyphens</p>
+<hr />
+<p>Asterisks</p>
+<hr />
+<p>Underscores</p>
+
+<hr class="carved"/>
+<div id="thinhead">
+<h3 style="color:#f9f9f9;">Line Breaks </h3>
+</div>
+<hr class="carved"/>
+<p>My basic recommendation for learning how line breaks work is to experiment and discover -- hit <Enter> once (i.e., insert one newline), then hit it twice (i.e., insert two newlines), see what happens. You'll soon learn to get what you want.</p>
+<p>Here are some things to try out:</p>
+<pre>
+Here's a line for us to start with.
+
+This line is separated from the one above by two newlines, so it will be a *separate paragraph*.
+
+This line is also a separate paragraph, but...
+This line is only separated by a single newline, so it's a separate line in the *same paragraph*.
+</pre>
+<p>Here's a line for us to start with.</p>
+<p>This line is separated from the one above by two newlines, so it will be a <em>separate paragraph</em>.</p>
+<p>This line is also a separate paragraph, but...
+This line is only separated by a single newline, so it's a separate line in the <em>same paragraph</em>.</p>	
+	
+<hr class="carved"/>
+<div id="thinhead">
+<h3 style="color:#f9f9f9;">Youtube Videos </h3>
+</div>
+<hr class="carved"/>
+<p>They can't be added directly but you can add an image with a link to the video like this:</p>
+
+</p>&#x000A;&#x000A;       <div class="white"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.youtube.com/watch?feature=player_embedded&amp;v=YOUTUBE_VIDEO_ID_HERE</span>&#x000A;<span class="s">&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg&quot;</span> &#x000A;<span class="na">alt=</span><span class="s">&quot;IMAGE ALT TEXT HERE&quot;</span> <span class="na">width=</span><span class="s">&quot;240&quot;</span> <span class="na">height=</span><span class="s">&quot;180&quot;</span> <span class="na">border=</span><span class="s">&quot;10&quot;</span> <span class="nt">/&gt;&lt;/a&gt;</span>&#x000A;</pre></div></div>&#x000A;&#x000A;&#x000A;<p>
+</pre>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
+" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
+<p>Or, in pure Markdown, but losing the image sizing and border:</p>
+<pre>
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+</pre>
+	
+<hr class="carved"/>
+<div id="thinhead">
+<h3 style="color:#f9f9f9;">Resources </h3>
+</div>
+<hr class="carved"/>
+<p>For more Markdown Format Specifications visit the official documentation page at : <a href="http://daringfireball.net/projects/markdown/syntax">http://daringfireball.net/projects/markdown/syntax</a> </p>
+<p> You can also download a local markdown cheatsheet in pdf format here : <a href="markdown_cheatsheet.pdf"> Markdown Cheatsheet </a></p>
+			
+				
+				</div>
+
+				<div class="clear"></div>
+		</div>			
+
+		<footer>
+			<p>
+			  <em>Marker</em> is open source. For questions, bug reports, feature requests, visit the <a target="_blank" href="https://github.com/sonal-raj/marker">Github project page</a>.
+			</p>
+			<p>
+			  Created by <a target="_blank" href="http://www.github.com/sonal-raj">Sonal Raj</a>.
+			</p>
+		</footer>
+		
+		<div id="tests-link"><a href="./test/index.html"><img title="Run tests" src="images/icon16.png"/></a></div>
+		
+		
+    </body>
+
+	<script src="vendor/jquery-1.9.1.js"></script>
+</html>
