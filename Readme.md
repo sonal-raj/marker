@@ -15,8 +15,6 @@ We are here to help you out. With Marker, you can type in simple plain text mail
 
 #### Information and Contact
 Marker is based on the foundation of several amazing technologies with the major ones being
-
-*[Markdown](http://daringfireball.net/projects/markdown/)
-*[highlightjs](http://highlightjs.org/)
-
+* [Markdown](http://daringfireball.net/projects/markdown/)
+* [highlightjs](http://highlightjs.org/)
 For bugs, features, queries, contact **sonal@enfoss.org**
