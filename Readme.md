@@ -1,4 +1,4 @@
-### Marker
+### [Marker](http://sonal-raj.github.io/marker)
 ---
 With time, emails are tending to become fancier with inclusion of complete web based content compared to simple text data. They are becoming more illustrative, more informative and more aesthetically pleasing. Obviously, more complex process requires more of one's time and efforts
 
@@ -18,4 +18,5 @@ Marker is based on the foundation of several amazing technologies with the major
 * [Markdown](http://daringfireball.net/projects/markdown/)
 * [highlightjs](http://highlightjs.org/)
 
+View the official marker page : [http://sonal-raj.github.io/marker](http://sonal-raj.github.io/marker)
 For bugs, features, queries, contact **sonal@enfoss.org**
