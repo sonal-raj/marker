@@ -1,6 +1,6 @@
 /*
- * Copyright Adam Pritchard 2013
- * MIT License : http://adampritchard.mit-license.org/
+ * Copyright Sonal Raj 2013
+ * MIT License : http://sonalraj.mit-license.org/
  */
 
 "use strict";
