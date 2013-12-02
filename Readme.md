@@ -20,4 +20,4 @@ Marker is based on the foundation of several amazing technologies with the major
 
 View the official marker page : [http://sonal-raj.github.io/marker](http://sonal-raj.github.io/marker)
 
-For bugs, features and queries, contact **sonal@enfoss.org**
+For bugs, features, queries and suggestions, contact **sonal@enfoss.org**
